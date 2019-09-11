@@ -6,15 +6,12 @@
         <div>
             <h1><a href="/">Justin Hamilton</a></h1>
         </div>
-        <div>
-            <p>published: 9.10.2019, 7:46PM CST</p>
-            <h2><a href="">My First Post</a></h2>
-            <p>namaste bitches. this is justin hamilton signing off. if you need me ill be g chillin in a hammock in the himalays.</p>
-        </div>
-        <div>
-            <p>published: 9.10.2019 7:46PM CST</p>
-            <h2><a href="">My Second Post</a></h2>
-            <p>day two and its still LITTY. </p>
-        </div>
+      {% for post in posts %}
+      <div>
+          <p>published: {{post.published_date}}</p>
+            <h2><a href="">{{post.title}}</a></h2>
+            <p>{{post.text|linebreaksbr}}</p>
+      </div>
+      {% endfor %}
     </body>
 </html>
